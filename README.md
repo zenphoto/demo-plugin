@@ -1,13 +1,6 @@
-DevTools
-========
+Zenphoto demo plugin
+========================
 
-Zenphoto development tools
+This is a basic demo plugin that is meant as a starting point to write your own.
 
-plugins
---------
-
-The files in this repository are plugins that are useful in developing Zenphoto and/or Zenphoto themes and plugins. Place the script and its associated folder in your installation "plugins" folder.
-
-demo_plugin-and-theme
-----------------------
-A starter kit if you want to create your own themes and/or plugins.
+For more info on plugins please visit the plugin tutorial on **http://www.zenphoto.org/news/zenphoto-plugin-architecture** before starting.
