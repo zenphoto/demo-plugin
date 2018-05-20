@@ -65,7 +65,7 @@ $plugin_version = '1.0';
 $plugin_url = '';
 
 /*
- * controls setting the checkbox to enable the plugin. If the plugin cannot run, set this to the "reason"
+ * OPTIONAL: controls setting the checkbox to enable the plugin. If the plugin cannot run, set this to the "reason"
  * and admin will display the "reason" and will not enable the plugin. The variable should not be present
  * or be set to empty the plugin may be enabled.
  */
@@ -93,6 +93,11 @@ $plugin_disable = '';
  * Otherwise a new tab will be introduced.
  */
 $plugin_category = '';
+
+/*
+ * OPTIONAL: Add a short deprecation message if needed. Meant for one sentence as it is printed as a paragraph on the backend.
+ */
+$plugin_deprecated = ''; 
 
 /*
  * If your plugin supports options, this variable should set to the option handler for the plugin.
