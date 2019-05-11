@@ -10,25 +10,21 @@
  *
  * @author author_name
  * @package plugins 
- * 					(this should be kept)
+ * 		(this should be kept)
  * @subpackage development
  * 		(Apples to official plugins primarily: This should be the name of the plugin so the documentation generator can group procedural functions belong to this plugin. 
  * 		 Note: Replace underscores with dashes as it otherwise will not work)
  */
 
 /*
- * flags this plugin as a filter type plugin and sets it load priority.
+ * Flags this plugin as a filter type plugin and sets it load priority.
  * The filters will be loaded in decending priority order. Normal front-end plugins should
  * set this variable to 1. They will be loaded by index.php after the front-end environment has
  * been established. Values greater than 1 will cause the plugin to load with the class libraries.
  * These will be available to the admin scipts as well as to the front-end, but will load before
- *
  * the front-end environment is established. Values less than zero will load normally on the
- *
  * front-end but will also be available to the admin scripts.[1.2.6] The absolute value of value
- *
  * will be used for the load prioirity.[1.2.7] [1.4] There are three defines used in conjunction
- *
  * with this variable which control when in the script load process the plugin will be loaded.
  *
  * They are:
@@ -44,7 +40,7 @@
 $plugin_is_filter = 5 | THEME_PLUGIN;
 
 /*
- * Should be set to the text you wish displayed on the admin plugins tab description of the plugin
+ * Should be set to the text you wish displayed on the admin plugins tab description of the plugin.
  */
 $plugin_description = gettext_pl('This is a raw functional example of a basic Zenphoto theme plugin', 'zenphoto_demoplugin');
 
@@ -54,7 +50,7 @@ $plugin_description = gettext_pl('This is a raw functional example of a basic Ze
 $plugin_author = 'Author';
 
 /*
- * Version of the plugin. Official plugins always have the version of the Zenphoto release automatically
+ * Version of the plugin. Official plugins always have the version of the Zenphoto release automatically.
  */
 $plugin_version = '1.0';
 
@@ -74,7 +70,7 @@ $plugin_disable = '';
 /*
  * This controls the category tab the plugin is listed on the Zenphoto backend. The term should be used with gettext:
  * `$plugin_category = gettext('Media')`;
- * Try to place your plugin within one of these current general categories aso the term is translated via the general
+ * Try to place your plugin within one of these general categories as the term is translated via the general
  * Zenphoto translation file:
  * 
  * 	- gettext('Admin')
@@ -95,7 +91,7 @@ $plugin_disable = '';
 $plugin_category = '';
 
 /*
- * OPTIONAL: Add a short deprecation message if needed. Meant for one sentence as it is printed as a paragraph on the backend.
+ * OPTIONAL: Add a short deprecation message if needed. Meant for just one sentence as it is printed as a paragraph on the backend.
  */
 $plugin_deprecated = ''; 
 
@@ -103,31 +99,31 @@ $plugin_deprecated = '';
  * If your plugin supports options, this variable should set to the option handler for the plugin.
  * Note: as from Zenphoto 1.4 the "name" of the class should be stored rather than an instantiation
  * of it. This is to eliminate unneeded class instantiations in the main-line of Zenphoto. We have
- * determined these are costly of performance.
+ * determined these are costly for performance.
  */
 $option_interface = 'demopluginOptions';
 
 /*
  * If your plugin requires something to be loaded, e.g. functions from its own plugin subfolder do this here.
- *  The path resolves to <yourdomain>.com/plugins/<folder belonging to your plugin>/file.php
+ *  The path resolves to <yourdomain>.com/plugins/<folder belonging to your plugin>/file.php.
  * Note: Official plugins use the constant PLUGIN_FOLDER while 3rd party plugins residing in /plugins
- *  must to use the constant USER_PLUGIN_FOLDER 
+ *  must to use the constant USER_PLUGIN_FOLDER. 
  */
 require_once(SERVERPATH . '/' . USER_PLUGIN_FOLDER . '/zenphoto_demoplugin/file.php');
 
 /*
  * if you need to set any filters do this here. Here an example to add a specific javascript file to the theme head.
  * yourplugin_javascript is the name of the function to attach to the filter. See the plugin tutorial for details
- * on all available filters as some require special setup naturally. 
+ * on all available filters as some require special setup. 
  */
 zp_register_filter('theme_head', 'demoplugin::javascript');
 /*
- * the following filter calls a function in a file that was included by the above require_once statement
+ * the following filter calls a function in a file that was included by the above require_once statement.
  */
 zp_register_filter('theme_body_open', 'included');
 
 /*
- * This is defined on the $option_interface setting above 
+ * This is defined on the $option_interface setting above. 
  */
 class demopluginOptions {
 
@@ -137,9 +133,9 @@ class demopluginOptions {
 	 * @return admin_login
 	 */
 	function __construct() {
-		// set like this all plugin option default values
+		// set all option default values like this
 		setOptionDefault('demoplugin_radiobuttons', 'suboption3');
-		setOptionDefault('demoplugin_checkbox', 1); // use 0/1 or false/true for checkbox options
+		setOptionDefault('demoplugin_checkbox', 1); // use 0/1 or false/true for checkbox options.
 		setOptionDefault('demoplugin_customoption', 'default text');
 	}
 
@@ -150,18 +146,18 @@ class demopluginOptions {
 	 */
 	function getOptionsSupported() {
 		/*
-		 * The option definitions are stored in a multidimensional array. There are several predefine option types.
-		 * Options types are the same for plugins and themes.
+		 * The option definitions are stored in a multidimensional array. There are several predefined option types.
+		 * Option types are the same for plugins and themes.
 		 */
 		$options = array(
 				/* 
-				 * Radio buttons 
+				 * Radio buttons
 				 */
-				gettext_pl('Radio buttons option', 'zenphoto_demoplugin') => array(// The Title of your option that can be translated
-						'key' => 'demoplugin_radiobuttons', // the real name of the option that is stored in the database.
-						// Good practice is to name these like yourdemoplugin_optionname
-						'type' => OPTION_TYPE_RADIO, // this is generates an option interface for radio buttons
-						'order' => 7, // the order position the option should have on the plugin option
+				gettext_pl('Radio buttons option', 'zenphoto_demoplugin') => array(// The Title of your option that can be translated.
+						'key' => 'demoplugin_radiobuttons', // The real name of the option that is stored in the database.
+						// Good practice is to name these like yourdemoplugin_optionname.
+						'type' => OPTION_TYPE_RADIO, // This is generates an option interface for radio buttons.
+						'order' => 7, // The order position the option should have on the plugin option.
 						'buttons' => array(// The definition of as many radio buttons you need to choose from and their values. 
 								gettext_pl('Suboption 1-a', 'zenphoto_demoplugin') => 'value-to-store',
 								gettext_pl('Suboption 1-b', 'zenphoto_demoplugin') => 'value-to-store',
@@ -171,18 +167,18 @@ class demopluginOptions {
 				), // The description of the option
 
 				/*
-				 * Checkbox list as an array 
+				 * Checkbox list as an array
 				 * 
 				 * Note that the checkboxes are individual boolean options themselves that only store 0 and 1.
 				 * Therefore it is recommend to name the options accordingly. 
 				 * 
-				 * In code you don't check the main option (key) but these individual options themselves
+				 * In code you don't check the main option (key) but these individual options themselves.
 				 */
 				gettext_pl('Checkbox array list option', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_checkbox_array',
 						'type' => OPTION_TYPE_CHECKBOX_ARRAY,
 						'order' => 0,
-						'checkboxes' => array( //The definition of the checkboxes which are actually individual boolean suboptions 
+						'checkboxes' => array( //The definition of the checkboxes which are actually individual boolean suboptions. 
 								gettext_pl('Suboption 2-a', 'zenphoto_demoplugin') => 'demoplugin_checkbox_array-suboption2-a', // this is the option db name, not the value!
 								gettext_pl('Suboption 2-b', 'zenphoto_demoplugin') => 'demoplugin_checkbox_array-suboption2-b',
 								gettext_pl('Suboption 2-c', 'zenphoto_demoplugin') => 'demoplugin_checkbox_array-suboption2-c'
@@ -194,7 +190,7 @@ class demopluginOptions {
 				 * Note that the checkboxes are individual boolean options themselves that only store 0 and 1.
 				 * Therefore it is recommend to name the options accordingly. 
 				 * 
-				 * In code you don't check the main option (key) but these individual options themselves
+				 * In code you don't check the main option (key) but these individual options themselves.
 				 */
 				gettext_pl('Checkbox list', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_checkbox_list',
@@ -220,8 +216,8 @@ class demopluginOptions {
 				gettext_pl('Input text field option', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_textbox',
 						'type' => OPTION_TYPE_TEXTBOX,
-						'multilingual' => 1, // optional if the field should be multilingual if Zenphoto is run in that mode.
-						//Then there will be one input field per enabled language.
+						'multilingual' => 1, // Optional: if the field should be multilingual if Zenphoto is run
+						//in that mode. Then there will be one textarea per enabled language.
 						'order' => 9,
 						'desc' => gettext_pl('Description', 'zenphoto_demoplugin')),
 				/* 
@@ -246,8 +242,8 @@ class demopluginOptions {
 				gettext_pl('Textarea field option', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_textarea',
 						'type' => OPTION_TYPE_TEXTAREA,
-						'texteditor' => 1, // optional to enable the visual editor TinyMCE on this field
-						'multilingual' => 1, // optional if the field should be multilingual if Zenphoto is run
+						'texteditor' => 1, // Optional: to enable the visual editor TinyMCE on this field.
+						'multilingual' => 1, // Optional: if the field should be multilingual if Zenphoto is run
 						//in that mode. Then there will be one textarea per enabled language.
 						'order' => 9,
 						'desc' => gettext_pl('Description', 'zenphoto_demoplugin')),
@@ -274,7 +270,7 @@ class demopluginOptions {
 						'desc' => gettext_pl('Description', 'zenphoto_demoplugin')),
 				/* 
 				 * Custom option if none of the above standard ones fit your purpose. 
-				 * You define what to do and show within the method handleOption() below 
+				 * You define what to do within the method handleOption() below.
 				 */
 				gettext_pl('Custom option', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_customoption', // note that this name is referenced in handleOption() below!
