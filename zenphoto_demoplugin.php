@@ -310,8 +310,8 @@ class demopluginOptions {
 		if ($option == 'demoplugin_customoption') {
 			?>
 			<p>This is a custom option printing a custom "protected" input field. Custom option can be used if none of the above standard ones fit your purpose.</p>
-			<input type="textbox" id="zenphoto_demoplugin_mask_input_show" size="40"  style="width: 338px" value="<?php echo html_encode($currentValue); ?>" />
-			<input type="textbox" id="zenphoto_demoplugin_mask_input" size="40" name="demoplugin_customoption" value="<?php echo html_encode($currentValue); ?>" disabled="disabled" />
+			<input type="text" id="zenphoto_demoplugin_mask_input_show" size="40"  style="width: 338px" value="<?php echo html_encode($currentValue); ?>" />
+			<input type="text" id="zenphoto_demoplugin_mask_input" size="40" name="demoplugin_customoption" value="<?php echo html_encode($currentValue); ?>" disabled="disabled" />
 			<script type="text/javascript">
 			<!--
 				function zenphoto_demoplugin_mask_input() {
