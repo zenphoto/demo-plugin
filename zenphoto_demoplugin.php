@@ -45,27 +45,33 @@ $plugin_is_filter = 5 | THEME_PLUGIN;
 $plugin_description = gettext_pl('This is a raw functional example of a basic Zenphoto theme plugin', 'zenphoto_demoplugin');
 
 /*
- * The author of the plugin. This is also displayed on the plugins tab.
+ * OPTIONAL: The author of the plugin. This is also displayed on the plugins tab.
  */
 $plugin_author = 'Author';
 
 /*
- * Version of the plugin. Official plugins always have the version of the Zenphoto release automatically.
+ * OPTIONAL: Version of the plugin. Official plugins always have the version of the Zenphoto release automatically.
  */
 $plugin_version = '1.0';
 
 /*
- * URL to the usage documentation for the plugin. For plugins distributed with Zenphoto this is an URL
- * to the PHP documentation page of the plugin on zenphoto.org.
+ * OPTIONAL: The release date of the current plugin version (since 1.5.8b)
  */
-$plugin_url = '';
+$plugin_date = '2020-07-03';
 
 /*
- * OPTIONAL: controls setting the checkbox to enable the plugin. If the plugin cannot run, set this to the "reason"
- * and admin will display the "reason" and will not enable the plugin. The variable should not be present
- * or be set to empty the plugin may be enabled.
+ * OPTIONAL: URL to the usage documentation for the plugin. For plugins distributed with Zenphoto this is an URL
+ * to the PHP documentation page of the plugin on zenphoto.org. (since 1.5.8b)
  */
-$plugin_disable = '';
+$plugin_siteurl = '';
+
+/*
+ * OPTIONAL: Use ternary operators to add dependency or requirements checks. If they match and this is not false, 
+ * the plugin will be disabled/cannot be disabled and the message is displayed on the backend. The variable should not be present
+ * or be set to empty the plugin may be enabled.
+ * You can also provide an array with serveral conditions (since 1.5.8b)
+ */
+$plugin_disable = ($something != $somecondition) ? gettext('Message about the failed check') : false;;
 
 /*
  * This controls the category tab the plugin is listed on the Zenphoto backend. The term should be used with gettext:
@@ -93,10 +99,15 @@ $plugin_category = '';
 /*
  * OPTIONAL: Add a short deprecation message if needed. Meant for just one sentence as it is printed as a paragraph on the backend.
  */
-$plugin_deprecated = ''; 
+$plugin_deprecated = gettext('Some message'); 
 
 /*
- * If your plugin supports options, this variable should set to the option handler for the plugin.
+ * OPTIONAL: A short notice about e.g. specific settings that need to be made or similar. Also note here if your theme uses external sources 
+ */
+$plugin_notice = gettext('A short notice.');
+
+/*
+ * OPTIONAL: If your plugin supports options, this variable should set to the option handler for the plugin.
  * Note: as from Zenphoto 1.4 the "name" of the class should be stored rather than an instantiation
  * of it. This is to eliminate unneeded class instantiations in the main-line of Zenphoto. We have
  * determined these are costly for performance.
