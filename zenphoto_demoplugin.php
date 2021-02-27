@@ -55,13 +55,13 @@ $plugin_author = 'Author';
 $plugin_version = '1.0';
 
 /*
- * OPTIONAL: The release date of the current plugin version (since 1.5.8b)
+ * OPTIONAL: The release date of the current plugin version (since 1.5.8)
  */
 $plugin_date = '2020-07-03';
 
 /*
  * OPTIONAL: URL to the usage documentation for the plugin. For plugins distributed with Zenphoto this is an URL
- * to the PHP documentation page of the plugin on zenphoto.org. (since 1.5.8b)
+ * to the PHP documentation page of the plugin on zenphoto.org. (since 1.5.8)
  */
 $plugin_siteurl = '';
 
@@ -69,7 +69,7 @@ $plugin_siteurl = '';
  * OPTIONAL: Use ternary operators to add dependency or requirements checks. If they match and this is not false, 
  * the plugin will be disabled/cannot be disabled and the message is displayed on the backend. The variable should not be present
  * or be set to empty the plugin may be enabled.
- * You can also provide an array with serveral conditions (since 1.5.8b)
+ * You can also provide an array with serveral conditions (since 1.5.8)
  */
 $plugin_disable = ($something != $somecondition) ? gettext('Message about the failed check') : false;;
 
