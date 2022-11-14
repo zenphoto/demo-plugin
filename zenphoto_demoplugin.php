@@ -98,6 +98,7 @@ $plugin_category = '';
 
 /*
  * OPTIONAL: Add a short deprecation message if needed. Meant for just one sentence as it is printed as a paragraph on the backend.
+ * From ZenphotoCMS 1.6 on you can leave it empty or set it to true to get a default message. Don't set this at all if it is not deprecated.
  */
 $plugin_deprecated = gettext('Some message'); 
 
