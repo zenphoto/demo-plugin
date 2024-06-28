@@ -169,7 +169,7 @@ class demopluginOptions {
 						'key' => 'demoplugin_radiobuttons', // The real name of the option that is stored in the database.
 						// Good practice is to name these like yourdemoplugin_optionname.
 						'type' => OPTION_TYPE_RADIO, // This is generates an option interface for radio buttons.
-						'order' => 7, // The order position the option should have on the plugin option.
+						'order' => 7, // OPTIONAL: It is recommended to just define the array in the order intended
 						'buttons' => array(// The definition of as many radio buttons you need to choose from and their values. 
 								gettext_pl('Suboption 1-a', 'zenphoto_demoplugin') => 'value-to-store',
 								gettext_pl('Suboption 1-b', 'zenphoto_demoplugin') => 'value-to-store',
@@ -189,7 +189,6 @@ class demopluginOptions {
 				gettext_pl('Checkbox array list option', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_checkbox_array',
 						'type' => OPTION_TYPE_CHECKBOX_ARRAY,
-						'order' => 0,
 						'checkboxes' => array( //The definition of the checkboxes which are actually individual boolean suboptions. 
 								gettext_pl('Suboption 2-a', 'zenphoto_demoplugin') => 'demoplugin_checkbox_array-suboption2-a', // this is the option db name, not the value!
 								gettext_pl('Suboption 2-b', 'zenphoto_demoplugin') => 'demoplugin_checkbox_array-suboption2-b',
@@ -207,7 +206,6 @@ class demopluginOptions {
 				gettext_pl('Checkbox list', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_checkbox_list',
 						'type' => OPTION_TYPE_CHECKBOX_UL,
-						'order' => 0,
 						'checkboxes' => array(// The definition of the checkboxes which are actually individual boolean suboptions 
 								gettext_pl('Suboption 3-a', 'zenphoto_demoplugin') => 'demoplugin_checkbox_list-suboption3-a', // this is the option db name, not the value!
 								gettext_pl('Suboption 3-b', 'zenphoto_demoplugin') => 'demoplugin_checkbox_list-suboption3-b',
@@ -220,7 +218,6 @@ class demopluginOptions {
 				gettext_pl('One Checkbox option only', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_checkbox',
 						'type' => OPTION_TYPE_CHECKBOX,
-						'order' => 2,
 						'desc' => gettext_pl('Description', 'zenphoto_demoplugin')),
 				/* 
 				 * Input text field option 
@@ -230,7 +227,6 @@ class demopluginOptions {
 						'type' => OPTION_TYPE_TEXTBOX,
 						'multilingual' => 1, // Optional: if the field should be multilingual if Zenphoto is run
 						//in that mode. Then there will be one textarea per enabled language.
-						'order' => 9,
 						'desc' => gettext_pl('Description', 'zenphoto_demoplugin')),
 				/* 
 				 * Password input field option 
@@ -238,7 +234,6 @@ class demopluginOptions {
 				gettext_pl('Password input field option', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_input_password',
 						'type' => OPTION_TYPE_PASSWORD,
-						'order' => 9,
 						'desc' => gettext_pl('Description', 'zenphoto_demoplugin')),
 				/* 
 				 * Cleartext option 
@@ -246,7 +241,6 @@ class demopluginOptions {
 				gettext_pl('Cleartext input field option', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_input_cleartext',
 						'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 9,
 						'desc' => gettext_pl('Description', 'zenphoto_demoplugin')),
 				/* 
 				 * Textareafield option 
@@ -257,7 +251,6 @@ class demopluginOptions {
 						'texteditor' => 1, // Optional: to enable the visual editor TinyMCE on this field.
 						'multilingual' => 1, // Optional: if the field should be multilingual if Zenphoto is run
 						//in that mode. Then there will be one textarea per enabled language.
-						'order' => 9,
 						'desc' => gettext_pl('Description', 'zenphoto_demoplugin')),
 				/* 
 				 * Dropdown selector option 
@@ -265,7 +258,6 @@ class demopluginOptions {
 				gettext_pl('Dropdown selector option', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_selector',
 						'type' => OPTION_TYPE_SELECTOR,
-						'order' => 1,
 						'selections' => array(// The definition of the selector values. You can of course have more than three.
 								gettext_pl('Suboption1', 'zenphoto_demoplugin') => 'value-to-store',
 								gettext_pl('Suboption2', 'zenphoto_demoplugin') => 'value-to-store',
@@ -298,7 +290,6 @@ class demopluginOptions {
 			$options['note'] = array(
 					'key' => 'demoplugin_note',
 					'type' => OPTION_TYPE_NOTE,
-					'order' => 25,
 					'desc' => gettext_pl('<p class="notebox">Sometimes you might want to put out notes for example if someone tries to run the plugin but its server lacks support.
 																Then there is an option type for notes only</p>', 'zenphoto_demoplugin') // the class 'notebox' is a standard class for styling notes on the backend, there is also 'errorbox' for errors. Of cours
 			);
@@ -381,8 +372,8 @@ class demopluginOptions {
 }
 
 /**
- * Place here any additional functionality your plugin provides. We recommend to use a (static) class instead of prefixing procedural function names
- * so you plugin functionality is clearly recognizable within themes or orther plugins
+ * Place here any additional functionality your plugin provides. We recommend to use one or more (static) classes instead of prefixing procedural function names
+ * so you plugin functionality is also clearly recognizable within themes or orther plugins
  */
 class demoplugin {
 
