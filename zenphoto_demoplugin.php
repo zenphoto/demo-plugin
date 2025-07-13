@@ -158,12 +158,14 @@ class demopluginOptions {
 	 */
 	function getOptionsSupported() {
 		/*
+		 * 
+		 *
 		 * The option definitions are stored in a multidimensional array. There are several predefined option types.
 		 * Option types are the same for plugins and themes.
 		 */
 		$options = array(
 				/* 
-				 * Radio buttons
+				 * A set of radio buttons option
 				 */
 				gettext_pl('Radio buttons option', 'zenphoto_demoplugin') => array(// The Title of your option that can be translated.
 						'key' => 'demoplugin_radiobuttons', // The real name of the option that is stored in the database.
@@ -179,15 +181,15 @@ class demopluginOptions {
 				), // The description of the option
 
 				/*
-				 * Checkbox list as an array
+				 * A set of plain checkboxes
 				 * 
 				 * Note that the checkboxes are individual boolean options themselves that only store 0 and 1.
-				 * Therefore it is recommend to name the options accordingly. 
+				 * Therefore it is recommended to name the options accordingly. 
 				 * 
 				 * In code you don't check the main option (key) but these individual options themselves.
 				 */
 				gettext_pl('Checkbox array list option', 'zenphoto_demoplugin') => array(
-						'key' => 'demoplugin_checkbox_array',
+						'key' => 'demoplugin_checkbox_array', // this option name is not really used or stored
 						'type' => OPTION_TYPE_CHECKBOX_ARRAY,
 						'checkboxes' => array( //The definition of the checkboxes which are actually individual boolean suboptions. 
 								gettext_pl('Suboption 2-a', 'zenphoto_demoplugin') => 'demoplugin_checkbox_array-suboption2-a', // this is the option db name, not the value!
@@ -196,15 +198,15 @@ class demopluginOptions {
 						),
 						'desc' => gettext_pl('Description', 'zenphoto_demoplugin')),
 				/* 
-				 * Checkbox list as an unordered html list
+				 * Checkbox list as an scrollable unordered html list
 				 * 
 				 * Note that the checkboxes are individual boolean options themselves that only store 0 and 1.
-				 * Therefore it is recommend to name the options accordingly. 
+				 * Therefore it is recommended to name the options accordingly. 
 				 * 
 				 * In code you don't check the main option (key) but these individual options themselves.
 				 */
 				gettext_pl('Checkbox list', 'zenphoto_demoplugin') => array(
-						'key' => 'demoplugin_checkbox_list',
+						'key' => 'demoplugin_checkbox_list', // this option name is not really used or stored
 						'type' => OPTION_TYPE_CHECKBOX_UL,
 						'checkboxes' => array(// The definition of the checkboxes which are actually individual boolean suboptions 
 								gettext_pl('Suboption 3-a', 'zenphoto_demoplugin') => 'demoplugin_checkbox_list-suboption3-a', // this is the option db name, not the value!
