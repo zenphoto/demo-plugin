@@ -275,8 +275,13 @@ class demopluginOptions {
 						'type' => OPTION_TYPE_COLOR_PICKER,
 						'desc' => gettext_pl('Description', 'zenphoto_demoplugin')),
 				/* 
-				 * Custom option if none of the above standard ones fit your purpose. 
-				 * You define what to do within the method handleOption() below.
+				 * While you should try to cover your options with the above standard ones, you sometime may have specific requirements.
+				 * Here you can create your own custom option if none of the above standard ones fit your purpose. 
+				 * 
+				 * - Your custom option form interface is defined within the method handleOption() 
+				 * - Your custom option save process is defined within the method handleOptionSave()
+				 * 
+				 * See examples below
 				 */
 				gettext_pl('Custom option', 'zenphoto_demoplugin') => array(
 						'key' => 'demoplugin_customoption', // note that this name is referenced in handleOption() below!
