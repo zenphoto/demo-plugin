@@ -75,7 +75,7 @@ $plugin_disable = ($something != $somecondition) ? gettext('Message about the fa
 
 /*
  * This controls the category tab the plugin is listed on the Zenphoto backend. The term should be used with gettext:
- * `$plugin_category = gettext('Media')`;
+ * $plugin_category = gettext('Media');
  * Try to place your plugin within one of these general categories as the term is translated via the general
  * Zenphoto translation file:
  * 
